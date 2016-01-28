@@ -25,15 +25,15 @@ import org.apache.curator.utils.PathUtils;
 
 public class ChildData implements Comparable<ChildData>
 {
-    private final String    path;
-    private final Stat      stat;
-    private final AtomicReference<byte[]>    data;
+    private final String path;
+    private final Stat stat;
+    private final byte[] data;
 
     public ChildData(String path, Stat stat, byte[] data)
     {
         this.path = PathUtils.validatePath(path);
         this.stat = stat;
-        this.data = new AtomicReference<byte[]>(data);
+        this.data = data;
     }
 
     /**
@@ -71,7 +71,7 @@ public class ChildData implements Comparable<ChildData>
 
         ChildData childData = (ChildData)o;
 
-        if ( !Arrays.equals(data.get(), childData.data.get()) )
+        if ( !Arrays.equals(data, childData.data) )
         {
             return false;
         }
@@ -92,7 +92,7 @@ public class ChildData implements Comparable<ChildData>
     {
         int result = path != null ? path.hashCode() : 0;
         result = 31 * result + (stat != null ? stat.hashCode() : 0);
-        result = 31 * result + (data != null ? Arrays.hashCode(data.get()) : 0);
+        result = 31 * result + Arrays.hashCode(data);
         return result;
     }
 
@@ -126,12 +126,7 @@ public class ChildData implements Comparable<ChildData>
      */
     public byte[] getData()
     {
-        return data.get();
-    }
-
-    void clearData()
-    {
-        data.set(null);
+        return data;
     }
 
     @Override
@@ -140,7 +135,7 @@ public class ChildData implements Comparable<ChildData>
         return "ChildData{" +
             "path='" + path + '\'' +
             ", stat=" + stat +
-            ", data=" + Arrays.toString(data.get()) +
+            ", data=" + Arrays.toString(data) +
             '}';
     }
 }
