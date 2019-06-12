@@ -94,10 +94,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/apache/curator.git</url>
-        <connection>scm:git:https://git-wip-us.apache.org/repos/asf/curator.git</connection>
-        <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/curator.git
-        </developerConnection>
+        <url>https://github.com/Kyligence/curator.git</url>
+        <connection>scm:git:https://github.com/Kyligence/curator.git</connection>
+        <developerConnection>scm:git:https://github.com/Kyligence/curator.git</developerConnection>
         <tag>apache-curator-2.12.0</tag>
     </scm>
 
@@ -124,10 +123,16 @@
     </ciManagement>
 
     <distributionManagement>
-        <site>
-            <id>apache.website.svnpub</id>
-            <url>scm:svn:https://svn.apache.org/repos/asf/curator/site/trunk</url>
-        </site>
+        <snapshotRepository>
+            <id>user-snapshots</id>
+            <name>User Project SNAPSHOTS</name>
+            <url>http://repository.kyligence.io:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>user-releases</id>
+            <name>User Project Release</name>
+            <url>http://repository.kyligence.io:8081/repository/maven-releases/</url>
+        </repository>
     </distributionManagement>
 
     <mailingLists>
