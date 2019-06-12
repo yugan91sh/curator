@@ -1,7 +1,11 @@
-Apache Curator
+Apache Curator Kylin 2.12.0 Branch
 --------------
-Curator is a set of Java libraries that make using Apache ZooKeeper much easier.
 
-Website: http://curator.apache.org/
+This is a fork from Apache Curator for Kyligence Enterprise 3.x version.
 
-Getting started: http://curator.apache.org/getting-started.html
+This branch only accepts bug fix.
+
+For more details, please see issue: https://github.com/Kyligence/KAP/issues/12190
+
+Change logs:
+2019-06-11: CURATOR-452, KAP-12190, fix childData.getData() can be null
