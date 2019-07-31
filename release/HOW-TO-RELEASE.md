@@ -44,6 +44,8 @@ Note that the `<tag>` tag inside `<scm>` is handled by `maven-release-plugin`.
 
 So far the pom.xml has been configured with Kyligence nexus server.
 
+Then remember to run `mvn clean install -DskipTests` to compile the code
+
 ## III. Update project-version to Snapshot
 
 This step is **OPTIONAL**.
@@ -67,7 +69,7 @@ After finished the above steps, now it's ready to prepare and perform the releas
 Use maven command as below to prepare the release:
 
 ```shell
-mvn release:clean release:prapare
+mvn release:clean release:prepare
 ```
 During the release prepare process, it will promotes to tag the release version, an example as below.
 
@@ -75,7 +77,7 @@ During the release prepare process, it will promotes to tag the release version,
 [INFO] Checking dependencies and plugins for snapshots ...
 What is the release version for "Apache Curator"? (org.apache.curator:apache-curator) 2.12.0-kylin-r1: : 
 What is SCM release tag or label for "Apache Curator"? (org.apache.curator:apache-curator) apache-curator-2.12.0-kylin-r1-SNAPSHOT: :                     
-What is the new development version for "Apache Curator"? (org.apache.curator:apache-curator) 2.12.1-kylin-r1-SNAPSHOT: : 
+What is the new development version for "Apache Curator"? (org.apache.curator:apache-curator) 2.12.1-kylin-r1-SNAPSHOT: : 2.12.0-kylin-r2-SNAPSHOT
 ```
 
 You can change the default value as you want and press enter, then the release prepare will be finished.

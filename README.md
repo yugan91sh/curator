@@ -11,10 +11,12 @@ For more details, please see issue: https://github.com/Kyligence/KAP/issues/1219
 ## Change log of BUG-FIX:
 
 2019-06-11: CURATOR-452, KAP-12190, fix childData.getData() can be null
+2019-07-31: KAP-13729, make InterProcessMutex#isOwnedByCurrentThread() public
 
 ## Release log of Curator kylin branch
 
 1. 2019-06-12  version: `2.12.0-kylin-r1`
+2. 2019-07-31  version: `2.12.0-kylin-r2`
 
 ## How to release
 
