@@ -553,6 +553,9 @@
                         <tagNameFormat>${project.artifactId}-${project.version}</tagNameFormat>
                         <pushChanges>false</pushChanges>
                         <localCheckout>true</localCheckout>
+                        <checkModificationExcludes>
+                            <checkModificationExclude>pom.xml</checkModificationExclude>
+                        </checkModificationExcludes>
                     </configuration>
                 </plugin>
 
@@ -809,7 +812,7 @@
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <createDependencyReducedPom>ffalse</createDependencyReducedPom>
                             <relocations>
                                 <relocation>
                                     <pattern>com.google</pattern>
