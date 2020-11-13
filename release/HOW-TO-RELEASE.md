@@ -56,7 +56,9 @@ You can edit the pom.xml manually or use the maven command to set it automatical
 
 For example, if set the current project version to `2.12.0-kylin-r1-SNAPSHOT`
 ```shell
-mvn versions:set -DnewVersion=2.12.0-kylin-r1-SNAPSHOT  
+mvn versions:set -DnewVersion=2.12.0-kylin-r1-SNAPSHOT 
+git clean -f -d
+git commit -m "Commit message" 
 ``` 
 Maven will change the project version and also the versions of all sub-modules automatically.
 
